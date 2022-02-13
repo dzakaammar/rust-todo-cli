@@ -21,6 +21,20 @@ impl Task {
     }
 }
 
+#[cfg(test)]
+mod task_tests {
+    use super::*;
+
+    #[test]
+    fn test_new_task() {
+        let text = String::from("test");
+        let task = Task::new(text.clone());
+
+        assert_eq!(task.text, text);
+        assert_eq!(task.created_at.date(), Utc::now().date());
+    }
+}
+
 impl fmt::Display for Task {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let created_at = self.created_at.with_timezone(&Local).format("%F %H:%M");
@@ -95,4 +109,12 @@ fn collect_tasks(mut file: &File) -> Result<Vec<Task>> {
     };
     file.seek(SeekFrom::Start(0))?; // Rewind the file after.
     Ok(tasks)
+}
+
+#[cfg(test)]
+mod common_tests {
+    #[test]
+    fn test_add_task() {
+        unimplemented!()
+    }
 }
