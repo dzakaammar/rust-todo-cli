@@ -111,10 +111,10 @@ fn collect_tasks(mut file: &File) -> Result<Vec<Task>> {
     Ok(tasks)
 }
 
-#[cfg(test)]
-mod common_tests {
-    #[test]
-    fn test_add_task() {
-        unimplemented!()
-    }
-}
+// #[cfg(test)]
+// mod common_tests {
+//     #[test]
+//     fn test_add_task() {
+//         unimplemented!()
+//     }
+// }

@@ -4,7 +4,7 @@ use structopt::StructOpt;
 mod cli;
 mod tasks;
 
-use cli::{Action::*, CommandLineArgs};
+use cli::{Action::Add, Action::Done, Action::List, CommandLineArgs};
 use std::path::PathBuf;
 use tasks::Task;
 
